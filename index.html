@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Menu!</title>
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/estilos.css">
+
+	<script>
+		var timer = setInterval(ready,100);
+
+		function ready(){
+			if (document.readyState == "complete") {
+
+				var burger = document.getElementById("burger");
+
+				burger.addEventListener("click",function(){
+					var lineas = this.getElementsByTagName("span");
+					for (var i = 0; i < lineas.length; i++) {
+
+						if (lineas[i].classList.contains("uno") == true) {
+							lineas[i].classList.toggle("activeuno");
+							lineas[i].classList.toggle("noanimation");
+						}
+
+						if (lineas[i].classList.contains("dos") == true) {
+							lineas[i].classList.toggle("activedos");
+							lineas[i].classList.toggle("noanimation");
+						}
+
+						if (lineas[i].classList.contains("tres") == true) {
+							lineas[i].classList.toggle("activetres");
+							lineas[i].classList.toggle("noanimation");
+						}
+				
+					}
+
+					this.parentNode.parentNode.classList.toggle("desplegado");
+
+				});
+
+
+
+				clearInterval(timer);
+			}
+		}
+	</script>
+
+
+	
+</head>
+<body>
+
+
+	<nav>
+		<div class="container">
+			<ul>
+				<li><a href="#">Sección1</a></li>
+				<li><a href="#">Sección2</a></li>
+				<li><a href="#">Sección3</a></li>
+				<li><a href="#">Sección4</a></li>
+			</ul>
+			<span id="burger" class="burger nodisplay">
+				<span class="uno"></span>
+				<span class="dos"></span>
+				<span class="tres"></span>
+			</span>
+		</div>
+	</nav>
+
+	
+</body>
+</html>
